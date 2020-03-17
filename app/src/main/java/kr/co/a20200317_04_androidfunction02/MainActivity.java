@@ -77,7 +77,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Uri uri = Uri.parse("")
+                Uri uri = Uri.parse("market://details?ids=com.kakao.talk");
+                Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
 
             }
         });
@@ -85,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
         binding.googlemapBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Uri uri = Uri.parse("goo:37.123,127.568");
+                Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
 
             }
         });
