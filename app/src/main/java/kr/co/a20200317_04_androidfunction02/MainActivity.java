@@ -28,11 +28,27 @@ public class MainActivity extends AppCompatActivity {
 //                => 전화 걸기 화면
 
 //                어느 화면으로 갈지 -> 안드로이드가 요구하는 방식으로 작성 : uri
-                Uri uri = Uri.parse("Tell:01012341234");
+                String inputPhone = binding.inputPhone.getText().toString();
+//
+                String phoneStr = String.format("tel:NU",inputPhone);
+                Uri uri = Uri.parse(phoneStr);
                 Intent intent = new Intent(Intent.ACTION_DIAL,uri);
                 startActivity(intent);
 
             }
         });
+
+        binding.callBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                현재까지 배운것만으로 실행 불가 , 변환 출력 X
+
+                Uri uri = Uri.parse("tell:01012341234");
+                Intent intent = new Intent(Intent.ACTION_CALL,uri);
+                startActivity(intent);
+            }
+        });
+
     }
 }
