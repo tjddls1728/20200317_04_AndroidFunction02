@@ -50,5 +50,44 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.smsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Uri uri = Uri.parse("smsto:01012341234");
+                Intent intent = new Intent(Intent.ACTION_SENDTO,uri);
+                intent.putExtra("sms_body","공유 메세지 내용");
+                startActivity(intent);
+
+            }
+        });
+
+        binding.naverBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Uri uri = Uri.parse("http://www.naver.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+
+            }
+        });
+
+        binding.playstoreBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Uri uri = Uri.parse("")
+
+            }
+        });
+
+        binding.googlemapBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 }
